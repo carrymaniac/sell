@@ -43,5 +43,5 @@ public interface ProductService {
      * @param productId
      * @return
      */
-    ProductInfo OffSale(String productId);
+    ProductInfo offSale(String productId);
 }

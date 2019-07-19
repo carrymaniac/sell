@@ -98,7 +98,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductInfo OffSale(String productId) {
+    public ProductInfo offSale(String productId) {
         Optional<ProductInfo> one = productInfoDao.findById(productId);
         if(!one.isPresent()){
             throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);

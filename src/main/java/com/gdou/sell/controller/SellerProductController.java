@@ -49,6 +49,31 @@ public class SellerProductController {
         map.put("currentPage",page);
         map.put("pageSize",size);
         return new ModelAndView("product/list",map);
+    }
 
+    @RequestMapping("on_sale")
+    public ModelAndView onSale(@RequestParam(value = "productId")String productInfoId,Map<String,Object> map){
+        try {
+            productService.onSale(productInfoId);
+        }catch (Exception e){
+            map.put("msg",e.getMessage());
+            map.put("url","/sell/seller/product/list");
+            return new ModelAndView("common/error",map);
+        }
+        map.put("url","/sell/seller/product/list");
+        return new ModelAndView("common/success",map);
+    }
+
+    @RequestMapping("on_sale")
+    public ModelAndView offSale(@RequestParam(value = "productId")String productInfoId,Map<String,Object> map){
+        try {
+            productService.offSale(productInfoId);
+        }catch (Exception e){
+            map.put("msg",e.getMessage());
+            map.put("url","/sell/seller/product/list");
+            return new ModelAndView("common/error",map);
+        }
+        map.put("url","/sell/seller/product/list");
+        return new ModelAndView("common/success",map);
     }
 }
