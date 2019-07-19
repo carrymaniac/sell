@@ -38,8 +38,8 @@ public class ProductCategoryDaoTest {
 //    @Transactional
     public void saveTest(){
         ProductCategory productCategory = new ProductCategory();
-        productCategory.setCategoryName("男生最爱");
-        productCategory.setCategoryType(1);
+        productCategory.setCategoryName("女生最爱" );
+        productCategory.setCategoryType(2);
         productCategoryDao.save(productCategory);
     }
 
